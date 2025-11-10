@@ -1,0 +1,19 @@
+{
+  "routerMap": [
+    {
+      "name": "mainPage",
+      "pageSourceFile": "src/main/ets/pages/MainPage.ets",
+      "buildFunction": "MainPageBuilder"
+    },
+    {
+      "name": "addNewCalendarPage",
+      "pageSourceFile": "src/main/ets/pages/AddNewCalendarPage.ets",
+      "buildFunction": "AddNewCalendarPageBuilder"
+    },
+    {
+      "name": "newPage",
+      "pageSourceFile": "src/main/ets/pages/NewPage.ets",
+      "buildFunction": "NewPageBuilder"
+    }
+  ]
+}
