@@ -1,6 +1,6 @@
 import { scheduleItem } from './scheduleItem'
-import { getToday, getMonthWeeks } from './tools';
-import { formatDateToString } from './tools';
+import { getToday, getMonthWeeks,formatDateToString,formatDateToMonthAndDay,getWeekday } from './tools';
+
 
 interface ScheduleItemData {
   title: string;
@@ -23,10 +23,10 @@ export struct schedule {
     { title: '废物处理', startTime: '13:00:00', endTime: '21:00:00' },
     { title: '电脑维修', startTime: '14:00:00', endTime: '20:00:00' },
     { title: '电池检查', startTime: '14:00:00', endTime: '22:00:00' },
-    // { title: '安全培训会议', startTime: '15:00:00', endTime: '16:30:00' },
-    // { title: '消防设施检查', startTime: '16:40:00', endTime: '17:20:00' },
-    // { title: '网络设备维护', startTime: '19:00:00', endTime: '20:30:00' },
-    // { title: '月度工作总结', startTime: '21:00:00', endTime: '22:30:00' }
+    { title: '安全培训会议', startTime: '15:00:00', endTime: '16:30:00' },
+    { title: '消防设施检查', startTime: '16:40:00', endTime: '17:20:00' },
+    { title: '网络设备维护', startTime: '19:00:00', endTime: '20:30:00' },
+    { title: '月度工作总结', startTime: '21:00:00', endTime: '22:30:00' }
   ];
 
   onTitleDateChanged(newValue: number[]) {
@@ -35,12 +35,20 @@ export struct schedule {
     this.weeks = getMonthWeeks(this.titleDate);
   }
 
+
   build() {
     Column() {
-      Text(`${this.scheduleDate}`)
-        .margin({ bottom: 12 })
-        .width('80%')
-        .height(33)
+      Row(){
+        Text(formatDateToMonthAndDay(this.scheduleDate))
+          .fontSize(24)
+
+        Text(getWeekday(this.scheduleDate))
+          .margin({ left:8 })
+          .fontSize(18)
+      }
+      .margin({bottom:12})
+      .width('80%')
+      .height(33)
 
       List({space:12}) {
         ForEach(this.scheduleItems,

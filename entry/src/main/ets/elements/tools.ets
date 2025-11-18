@@ -74,3 +74,46 @@ export function getMonthWeeks(date: number[]): number {
   return weeks;
 }
 
+
+/**
+ * 格式化日期为 "M月d日" 格式
+ * @param {string} dateString - 输入的日期字符串，如 '2026-06-13'
+ * @returns {string} 格式化后的日期字符串，如 '6月13日'。如果输入无效，则返回原始字符串或空字符串。
+ */
+export function formatDateToMonthAndDay(dateString: string): string {
+  if (!dateString) return '';
+
+  const date = new Date(dateString);
+
+  if (isNaN(date.getTime())) {
+    console.error('无效的日期字符串:', dateString);
+    return dateString;
+  }
+
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+
+  return `${month}月${day}日`;
+}
+
+/**
+ * 从日期字符串中获取星期几
+ * @param {string} dateString - 输入的日期字符串，如 '2026-06-13'
+ * @returns {string} 星期几的字符串，如 '周六'。如果输入无效，则返回空字符串。
+ */
+export function getWeekday(dateString: string): string {
+  if (!dateString) return '';
+
+  const date = new Date(dateString);
+
+  if (isNaN(date.getTime())) {
+    console.error('无效的日期字符串:', dateString);
+    return '';
+  }
+
+  const weekDays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+  const weekDayIndex = date.getDay();
+
+  return weekDays[weekDayIndex];
+}
+

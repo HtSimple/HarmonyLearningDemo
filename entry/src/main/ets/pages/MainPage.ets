@@ -1,5 +1,6 @@
 import {calendar} from "../elements/calendar"
 import {schedule} from "../elements/schedule"
+import {TopNavigationBar} from "../elements/TopNavigationBar"
 
 @Builder
 export function MainPageBuilder() {
@@ -15,29 +16,10 @@ export struct MainPage {
     NavDestination() {
       Stack() {
         Column() {
-          Stack() {
-            // 居中标题
-            Text('我的日程')
-              .fontSize(20)
-              .fontWeight(FontWeight.Normal)
-              .align(Alignment.Center)
-
-            // 左侧返回按钮
-            Button('<')
-              .width(44)
-              .height(44)
-              .fontSize(24)
-              .fontColor('#000000')
-              .backgroundColor('#FFFFFF')
-              .align(Alignment.Start)
-              .position({ left: 0 })
-              .onClick(() => {
-                this.navPathStack.pop()
-              })
-          }
-          .width('100%')
-          .height(44)
-          .backgroundColor('#FFFFFF')
+          TopNavigationBar({
+            navPathStack : this.navPathStack,
+            title : '我的日程'
+          })
 
           calendar()
 
