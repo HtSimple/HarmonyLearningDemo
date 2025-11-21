@@ -11,7 +11,7 @@ export struct AddNewCalendarPage {
   // 状态管理
   @State title: string = '';
   @State hasAttachment: boolean = false;
-
+  @State repeatFrequency: string = '不重复';
   navPathStack: NavPathStack = new NavPathStack()
 
   build() {
@@ -114,19 +114,20 @@ export struct AddNewCalendarPage {
                 .fontSize(14)
                 .fontColor('#666666')
                 .margin({ left: 36 })
-              Text('不重复')
+              Text(this.repeatFrequency)
                 .fontSize(14)
                 .fontColor('#000000')
-              Image('common/ic_arrow_right.png')
-                .width(16)
-                .height(16)
+              Button('>')
+                .onClick(()=>{
+                 this.navPathStack.pushPathByName('repeatFrequencyPage',null);
+                })
+                .buttonStyle(ButtonStyleMode.TEXTUAL)
             }
             .width('100%')
             .justifyContent(FlexAlign.SpaceBetween)
             .margin({ right: 36, bottom: 24 })
           }
           .width('100%')
-          .padding(20)
           .backgroundColor('#FFFFFF')
         }
 

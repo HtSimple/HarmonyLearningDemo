@@ -1,9 +1,9 @@
 {
   "routerMap": [
     {
-      "name": "mainPage",
-      "pageSourceFile": "src/main/ets/pages/MainPage.ets",
-      "buildFunction": "MainPageBuilder"
+      "name": "myCalendarPage",
+      "pageSourceFile": "src/main/ets/pages/MyCalendarPage.ets",
+      "buildFunction": "MyCalendarPageBuilder"
     },
     {
       "name": "addNewCalendarPage",
@@ -14,6 +14,11 @@
       "name": "newPage",
       "pageSourceFile": "src/main/ets/pages/NewPage.ets",
       "buildFunction": "NewPageBuilder"
+    },
+    {
+      "name": "repeatFrequencyPage",
+      "pageSourceFile": "src/main/ets/pages/RepeatFrequencyPage.ets",
+      "buildFunction": "RepeatFrequencyPageBuilder"
     }
   ]
 }

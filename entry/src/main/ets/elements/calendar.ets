@@ -1,6 +1,6 @@
 import { month } from './month';
 import { getNextNMonth, getNextNDay, getStartDate, getToday ,getMonthWeeks } from './tools';
-import { TitleStyle, SubTitleStyle, ItemHeight, callback, ItemSpace } from './const';
+import { TitleStyle, SubTitleStyle, ItemHeight,  ItemSpace } from './const';
 
 @Component
 export struct calendar {
@@ -18,7 +18,6 @@ export struct calendar {
   @State weeks: number = getMonthWeeks(this.titleDate);
 
   private titleDateChanged() {
-    callback(new Date(this.titleDate[0], this.titleDate[1] - 1, this.titleDate[2]))
     this.changeView()
     this.weeks = getMonthWeeks(this.titleDate);
   }

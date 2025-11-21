@@ -227,8 +227,8 @@ struct Index {
             // 手机号、密码和协议都校验通过，执行登录逻辑
             console.info(`Phone: ${this.phoneNumber}, Password: ${this.password}`);
             this.currentPage = 'main';
-            this.navPathStack.pushPathByName('mainPage',null);
-            console.info('transform from loginPage to mainPage');
+            this.navPathStack.pushPathByName('myCalendarPage',null);
+            console.info('transform from loginPage to myCalendarPage');
           })
 
 
@@ -238,7 +238,7 @@ struct Index {
           .margin({ bottom: 20 })
           .onClick(() => {
             this.currentPage = 'main';
-            this.navPathStack.pushPathByName('mainPage',null);
+            this.navPathStack.pushPathByName('myCalendarPage',null);
             console.info('One-click login');
           })
 

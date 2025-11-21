@@ -108,10 +108,3 @@ export const Animate: AnimateParam = {
   curve: Curve.EaseInOut
 }
 
-// ===== 回调函数 =====
-export function callback(date: Date): void {
-  promptAction.showToast({
-    message: '选择日期：' + `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`,
-    duration: 1000,
-  })
-}

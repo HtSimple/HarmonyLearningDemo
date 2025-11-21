@@ -3,13 +3,13 @@ import {schedule} from "../elements/schedule"
 import {TopNavigationBar} from "../elements/TopNavigationBar"
 
 @Builder
-export function MainPageBuilder() {
-  MainPage()
+export function MyCalendarPageBuilder() {
+  MyCalendarPage()
 }
 
 @Preview
 @Component
-export struct MainPage {
+export struct MyCalendarPage {
   navPathStack: NavPathStack = new NavPathStack()
 
   build() {
@@ -28,7 +28,7 @@ export struct MainPage {
             .layoutWeight(1)
         }
         .width('100%')
-        .padding({bottom:10})
+        .padding({bottom:0})
 
         Button('+')
           .width(56)
